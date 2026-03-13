@@ -2,17 +2,38 @@
   "name": "gym",
   "version": "1.0.0",
   "description": "",
-  "main": "tailwind.config.js",
+  "homepage": "https://github.com/akshansh-kakkkar/GYM#readme",
+  "bugs": {
+    "url": "https://github.com/akshansh-kakkkar/GYM/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akshansh-kakkkar/GYM.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
-    "watch:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "module",
-  "devDependencies": {
-    "tailwindcss": "^3.4.19"
+  "dependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "detect-libc": "^2.1.2",
+    "enhanced-resolve": "^5.20.0",
+    "graceful-fs": "^4.2.11",
+    "is-extglob": "^2.1.1",
+    "is-glob": "^4.0.3",
+    "jiti": "^2.6.1",
+    "lightningcss": "^1.31.1",
+    "lightningcss-linux-x64-gnu": "^1.31.1",
+    "magic-string": "^0.30.21",
+    "mri": "^1.2.0",
+    "node-addon-api": "^7.1.1",
+    "picocolors": "^1.1.1",
+    "picomatch": "^4.0.3",
+    "source-map-js": "^1.2.1",
+    "tailwindcss": "^4.2.1",
+    "tapable": "^2.3.0"
   }
 }
