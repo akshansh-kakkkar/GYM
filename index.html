@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -46,15 +46,28 @@
       max-height: 400px;
       opacity: 1;
     }
+
+    /* Navbar scroll effect */
+    nav.nav-scrolled {
+      padding-top: 0.5rem !important;
+    }
+
+    nav.nav-scrolled > div {
+      background-color: rgba(31, 37, 48, 0.9);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
   </style>
   <title>FFL GYM</title>
 </head>
 
 <body class="overflow-x-hidden bg-[#1f2530]">
   <section id="hero" class="hero-gradient min-h-screen lg:h-screen relative flex flex-col">
-    <nav class="relative z-50 pt-4 px-4 sm:pt-6 sm:px-6 lg:px-24">
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 pt-4 px-4 sm:pt-6 sm:px-6 lg:px-24 transition-all duration-300">
       <div
-        class="flex flex-wrap justify-between items-center text-white bg-white/5 backdrop-blur-xl px-4 sm:px-8 py-3 rounded-[40px] border border-white/10 shadow-2xl">
+        class="flex flex-wrap justify-between items-center text-white bg-white/5 backdrop-blur-xl px-4 sm:px-8 py-3 rounded-[40px] border border-white/10 shadow-2xl transition-all duration-300">
         <div class="flex items-center gap-4 lg:gap-12">
           <div class="flex items-center gap-2">
             <div class="w-8 h-8 flex items-center justify-center">
@@ -68,20 +81,20 @@
           <ul class="hidden md:flex items-center gap-10 font-light">
             <li>
               <a href="#about"
-                class="text-white hover:text-red-500 focus:border-b-2 focus:border-b-red-500 focus:text-red-500 transition-colors duration-300">About
+                class="text-white hover:text-red-500 transition-colors duration-300">About
                 Us</a>
             </li>
             <li>
-              <a href="#sec"
-                class="text-white hover:text-red-500 focus:border-b-2 focus:border-b-red-500 focus:text-red-500 transition-colors duration-300">Services</a>
+              <a href="#services"
+                class="text-white hover:text-red-500 transition-colors duration-300">Services</a>
             </li>
             <li>
-              <a href="#sec"
-                class="text-white hover:text-red-500 focus:border-b-2 focus:border-b-red-500 focus:text-red-500 transition-colors duration-300">Services</a>
+              <a href="#why-choose-us"
+                class="text-white hover:text-red-500 transition-colors duration-300">Preferences</a>
             </li>
             <li>
-              <a href="#sec"
-                class="text-white hover:text-red-500 focus:border-b-2 focus:border-b-red-500 focus:text-red-500 transition-colors duration-300">Services</a>
+              <a href="#subscriptions"
+                class="text-white hover:text-red-500 transition-colors duration-300">Subscriptions</a>
             </li>
           </ul>
         </div>
@@ -109,16 +122,16 @@
               Us</a>
           </li>
           <li>
-            <a href="#sec"
+            <a href="#services"
               class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-red-500 transition-colors duration-300">Services</a>
           </li>
           <li>
-            <a href="#sec"
-              class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-red-500 transition-colors duration-300">Services</a>
+            <a href="#why-choose-us"
+              class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-red-500 transition-colors duration-300">Preferences</a>
           </li>
           <li>
-            <a href="#sec"
-              class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-red-500 transition-colors duration-300">Services</a>
+            <a href="#subscriptions"
+              class="block px-4 py-3 rounded-xl hover:bg-white/10 hover:text-red-500 transition-colors duration-300">Subscriptions</a>
           </li>
           <li class="sm:hidden mt-2">
             <a href="#"
@@ -341,7 +354,7 @@
     </div>
   </section>
   </section>
-  <section id="about" class="font-inter" style="background-color: #1f2530;">
+  <section id="services" class="font-inter" style="background-color: #1f2530;">
 
     <div class="px-4 sm:px-8 lg:px-24 pt-16 sm:pt-20 lg:pt-28 pb-12 sm:pb-16">
       <!-- Section Label -->
@@ -990,6 +1003,16 @@
           icon.classList.remove('text-[#a0a3ab]');
         }
       });
+    });
+
+    // Navbar Scroll logic
+    const mainNav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        mainNav.classList.add('nav-scrolled');
+      } else {
+        mainNav.classList.remove('nav-scrolled');
+      }
     });
   </script>
 </body>
